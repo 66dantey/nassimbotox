@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import { joinVoiceChannel } from "@discordjs/voice";
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const keep_alive = require('./keep_alive.js');
+const keep_alive = require('./keep-alive.js');
 //console.log(process.env.token);
 const env = JSON.parse(process.env.TOKEN);
 client.on("ready", () => {
