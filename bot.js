@@ -6,6 +6,10 @@ const keep_alive = require('./keep_alive.js');
 const env = JSON.parse(process.env.TOKEN);
 client.on("ready", () => {
   const channel = client.channels.cache.get(env.channel_id);
+  if(!channel){
+    console.log("channel doesn't exist");
+    return;
+  }
   const connection = joinVoiceChannel({
     channelId: channel.id,
     guildId: channel.guild.id,
